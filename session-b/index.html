@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Library</title>
+    <link rel="stylesheet" href="./view/styles/style.css" />
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <!-- Main screen: start -->
+    <template id="mainScreen">
+      <link rel="stylesheet" href="./view/styles/style.css" />
+      <div class="container">
+        <h1 class="app-title">My library</h1>
+        <form id="form" class="js-form">
+          <input
+            id="book-input"
+            autofocus
+            type="text"
+            placeholder="New book"
+            required
+          />
+          <input
+            autofocus
+            id="author-input"
+            type="text"
+            placeholder="Author"
+            required
+          />
+          <button type="submit">Add</button>
+        </form>
+        <ul id="list" class="book-list"></ul>
+      </div>
+    </template>
+    <!-- Main screen: end -->
+
+    <!-- Book item: start -->
+    <template id="book-item">
+      <link rel="stylesheet" href="./view/styles/style.css" />
+      <li class="book-item">
+        <!-- <input id="check" type="checkbox" />
+        <label for="check" class="tick"></label> -->
+        <span></span>
+        <button class="delete-book">&#10006;</button>
+      </li>
+    </template>
+    <!-- Book item: end -->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-firestore.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyBGxpZd-D9RJk7S5LaKEcIj7oTSKbfvKDs",
+        authDomain: "book-app-b1196.firebaseapp.com",
+        databaseURL: "https://book-app-b1196.firebaseio.com",
+        projectId: "book-app-b1196",
+        storageBucket: "book-app-b1196.appspot.com",
+        messagingSenderId: "283288117530",
+        appId: "1:283288117530:web:347d3ed64719e6cdd74ca3",
+        measurementId: "G-KYM0PJJ7HD",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+      const db = firebase.firestore();
+    </script>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
